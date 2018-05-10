@@ -26,7 +26,8 @@ class MyAppState extends State<MyApp> {
     return new MaterialApp(
       home: new Scaffold(
         appBar: new AppBar(
-          title: new Text("Tolga"),
+          title: new Text("Döviz"),
+          centerTitle: true,
           backgroundColor: Colors.yellow,
         ),
         body: new Container(
@@ -44,12 +45,12 @@ class MyAppState extends State<MyApp> {
                   else
                     return new ListView.builder(
                       itemCount: data.length,
-                      itemBuilder: (BuildContext context,int index){
+                      itemBuilder: (BuildContext context, int index) {
                         return new ListTile(
                           title: new Text(data[index]['selling'].toString()),
-                          trailing: new Text(data[index]['code']),
+                          trailing: new Text(data[index]['full_name']),
+                          leading: new Icon(Icons.monetization_on),
                         );
-
                       },
                     );
               }
